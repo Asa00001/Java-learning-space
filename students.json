@@ -1,0 +1,234 @@
+[
+  {
+    "uid": "20231179",
+    "name": "Ethan Parker",
+    "age": 21,
+    "gpa": 3.0,
+    "year": "First",
+    "department": "DS"
+  },
+  {
+    "uid": "20231146",
+    "name": "Liam Thompson",
+    "age": 24,
+    "gpa": 3.5,
+    "year": "Fourth",
+    "department": "CS"
+  },
+  {
+    "uid": "20231185",
+    "name": "Lucas Bennett",
+    "age": 23,
+    "gpa": 2.0,
+    "year": "Third",
+    "department": "AI"
+  },
+  {
+    "uid": "20231149",
+    "name": "Chloe Anderson",
+    "age": 19,
+    "gpa": 3.9,
+    "year": "First",
+    "department": "AI"
+  },
+  {
+    "uid": "20231154",
+    "name": "Noah Wilson",
+    "age": 20,
+    "gpa": 3.4,
+    "year": "Second",
+    "department": "AI"
+  },
+  {
+    "uid": "20231171",
+    "name": "Grace Mitchell",
+    "age": 20,
+    "gpa": 2.9,
+    "year": "Second",
+    "department": "IT"
+  },
+  {
+    "uid": "20231172",
+    "name": "Isla Coleman",
+    "age": 20,
+    "gpa": 2.9,
+    "year": "Second",
+    "department": "IT"
+  },
+  {
+    "uid": "20231144",
+    "name": "Mason Carter",
+    "age": 20,
+    "gpa": 3.8,
+    "year": "Second",
+    "department": "CS"
+  },
+  {
+    "uid": "20231175",
+    "name": "Zoe Harper",
+    "age": 21,
+    "gpa": 3.5,
+    "year": "Third",
+    "department": "DS"
+  },
+  {
+    "uid": "20231158",
+    "name": "Caleb Morris",
+    "age": 21,
+    "gpa": 3.6,
+    "year": "Third",
+    "department": "IS"
+  },
+  {
+    "uid": "20231163",
+    "name": "Aiden Gray",
+    "age": 20,
+    "gpa": 1.8,
+    "year": "Second",
+    "department": "IS"
+  },
+  {
+    "uid": "20231168",
+    "name": "Henry Morgan",
+    "age": 20,
+    "gpa": 2.5,
+    "year": "Second",
+    "department": "DS"
+  },
+  {
+    "uid": "20231182",
+    "name": "Sophie Reynolds",
+    "age": 22,
+    "gpa": 3.6,
+    "year": "Fourth",
+    "department": "AI"
+  },
+  {
+    "uid": "20231181",
+    "name": "Jackson Hayes",
+    "age": 21,
+    "gpa": 1.9,
+    "year": "Third",
+    "department": "CS"
+  },
+  {
+    "uid": "20231143",
+    "name": "Owen Bailey",
+    "age": 22,
+    "gpa": 3.2,
+    "year": "Fourth",
+    "department": "IS"
+  },
+  {
+    "uid": "20231190",
+    "name": "Ella Brooks",
+    "age": 20,
+    "gpa": 2.9,
+    "year": "Second",
+    "department": "IT"
+  },
+  {
+    "uid": "20231177",
+    "name": "Lily Sanders",
+    "age": 20,
+    "gpa": 3.2,
+    "year": "Second",
+    "department": "AI"
+  },
+  {
+    "uid": "20231164",
+    "name": "Ava Turner",
+    "age": 21,
+    "gpa": 1.5,
+    "year": "Third",
+    "department": "CS"
+  },
+  {
+    "uid": "20231180",
+    "name": "Ruby Lawson",
+    "age": 20,
+    "gpa": 2.7,
+    "year": "Second",
+    "department": "IS"
+  },
+  {
+    "uid": "20231153",
+    "name": "Mila Foster",
+    "age": 19,
+    "gpa": 3.6,
+    "year": "First",
+    "department": "DS"
+  },
+  {
+    "uid": "20231173",
+    "name": "Aria Wallace",
+    "age": 19,
+    "gpa": 3.8,
+    "year": "First",
+    "department": "AI"
+  },
+  {
+    "uid": "20231151",
+    "name": "Logan Cooper",
+    "age": 21,
+    "gpa": 3.0,
+    "year": "Third",
+    "department": "IT"
+  },
+  {
+    "uid": "20231174",
+    "name": "Cameron Price",
+    "age": 20,
+    "gpa": 2.3,
+    "year": "Second",
+    "department": "IS"
+  },
+  {
+    "uid": "20231150",
+    "name": "Eli Hawkins",
+    "age": 21,
+    "gpa": 3.1,
+    "year": "Third",
+    "department": "IS"
+  },
+  {
+    "uid": "20231165",
+    "name": "Connor Blake",
+    "age": 22,
+    "gpa": 1.9,
+    "year": "Fourth",
+    "department": "AI"
+  },
+  {
+    "uid": "20231155",
+    "name": "Emily West",
+    "age": 21,
+    "gpa": 2.7,
+    "year": "Third",
+    "department": "DS"
+  },
+  {
+    "uid": "20231166",
+    "name": "Luna Freeman",
+    "age": 19,
+    "gpa": 1.7,
+    "year": "First",
+    "department": "DS"
+  },
+  {
+    "uid": "20231186",
+    "name": "Brooklyn Reed",
+    "age": 22,
+    "gpa": 1.9,
+    "year": "Fourth",
+    "department": "CS"
+  },
+  {
+    "uid": "20231167",
+    "name": "Nora Simmons",
+    "age": 21,
+    "gpa": 3.1,
+    "year": "First",
+    "department": "IT"
+  }
+]
