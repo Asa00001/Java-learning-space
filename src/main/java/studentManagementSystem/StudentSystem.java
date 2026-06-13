@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class StudentSystem {
-    private List<Student> students;
+    private final List<Student> students;
 
     public StudentSystem() {
         this.students = StudentStorage.loadStudents();
@@ -13,7 +13,7 @@ public class StudentSystem {
 
     private Student findStudentByUid(String uid) {
         for (Student student : students) {
-            if (student.getUid().equals(uid)) {
+            if (student.getUid().trim().equals(uid.trim())) {
                 return student;
             }
         }
@@ -178,7 +178,7 @@ public class StudentSystem {
             case "uid":
                 sortedStudents.sort(
                         Comparator.comparingInt(student ->
-                                Integer.parseInt(student.getUid()))
+                                Integer.parseInt(student.getUid().trim()))
                 );
                 break;
 
@@ -190,7 +190,13 @@ public class StudentSystem {
 
             case "year":
                 sortedStudents.sort(
-                        Comparator.comparing(Student::getYear)
+                        Comparator.comparingInt(student -> switch (student.getYear()) {
+                            case "First" -> 1;
+                            case "Second" -> 2;
+                            case "Third" -> 3;
+                            case "Fourth" -> 4;
+                            default -> Integer.MAX_VALUE;
+                        })
                 );
                 break;
 
@@ -209,6 +215,8 @@ public class StudentSystem {
     public String generateSummary() {
         StringBuilder stringBuilder = new StringBuilder();
 
+        stringBuilder.append("\n================ SUMMARY ================\n");
+
         stringBuilder.append("Average GPA: ")
                 .append(String.format("%.2f", calculateAverageGPA()))
                 .append("\n");
@@ -216,16 +224,20 @@ public class StudentSystem {
         stringBuilder.append("Total Students: ")
                 .append(countTotalStudents()).append("\n");
 
-        stringBuilder.append("Top 5 students: \n\n");
+        stringBuilder.append("\n=============== TOP 5 STUDENTS ===============\n");
+        stringBuilder.append("UID        Name                 Age  GPA   Year      Department\n");
+        stringBuilder.append("----------------------------------------------------------------\n");
         List<Student> top5 = displayTop5();
         for (Student student : top5) {
-            stringBuilder.append(student).append("\n\n");
+            stringBuilder.append(student).append("\n");
         }
 
-        stringBuilder.append("Failing students: \n\n");
+        stringBuilder.append("\n============= FAILING STUDENTS =============\n");
+        stringBuilder.append("UID        Name                 Age  GPA   Year      Department\n");
+        stringBuilder.append("----------------------------------------------------------------\n");
         List<Student> failingStudents = getFailingStudents();
         for (Student student : failingStudents) {
-            stringBuilder.append(student).append("\n\n");
+            stringBuilder.append(student).append("\n");
         }
 
         return stringBuilder.toString();
