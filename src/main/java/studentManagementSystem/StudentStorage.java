@@ -1,6 +1,7 @@
 package studentManagementSystem;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.FileReader;
@@ -31,7 +32,7 @@ public class StudentStorage {
     }
 
     public static void saveStudents(List<Student> students){
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         try(FileWriter fileWriter = new FileWriter(FILE_PATH)){
            gson.toJson(students, fileWriter);
