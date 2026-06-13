@@ -7,11 +7,11 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        StudentSystem  studentSystem = new StudentSystem();
+        StudentSystem studentSystem = new StudentSystem();
+
+        printMenu();
 
         while (true) {
-            printMenu();
-
             System.out.println("Please enter your choice:");
             String choice = scanner.nextLine();
             switch (choice) {
@@ -21,9 +21,17 @@ public class App {
                         System.out.println("Please enter student unique id: ");
                         uid = scanner.nextLine();
 
-                        if(InputValidation.isValidUid(uid)) break;
+                        if (!InputValidation.isValidUid(uid)) {
+                            System.out.println("Invalid student uid!");
+                            continue;
+                        }
 
-                        System.out.println("Invalid student uid!");
+                        if (studentSystem.getStudent(uid) != null) {
+                            System.out.println("Student uid already exists!");
+                            continue;
+                        }
+
+                        break;
                     }
 
                     String name;
@@ -200,6 +208,7 @@ public class App {
                     Student student = studentSystem.getStudent(uid);
 
                     if (student != null) {
+                        printHeader();
                         System.out.println(student);
                     } else {
                         System.out.println("Student not found!");
@@ -214,9 +223,8 @@ public class App {
                     List<Student> sortedStudents = studentSystem.listAndSortAllStudents(field);
 
                     System.out.println("\nSorted Student List\n");
-                    for (Student student : sortedStudents) {
-                        System.out.println(student);
-                    }
+                    printHeader();
+                    printStudentList(sortedStudents);
                     break;
                 }
                 case "6": {
@@ -229,10 +237,8 @@ public class App {
                             System.out.println("Please enter filter age:");
                             try {
                                 int age = Integer.parseInt(scanner.nextLine());
-
-                                for (Student student : studentSystem.filterByAge(age)) {
-                                    System.out.println(student);
-                                }
+                                printHeader();
+                                printStudentList(studentSystem.filterByAge(age));
                             } catch(NumberFormatException e) {
                                 System.out.println("Invalid filter age!");
                             }
@@ -242,9 +248,8 @@ public class App {
                             System.out.println("Please enter filter gpa:");
                             try{
                                 double gpa = Double.parseDouble(scanner.nextLine());
-                                for(Student student : studentSystem.filterByGPA(gpa)) {
-                                    System.out.println(student);
-                                }
+                                printHeader();
+                                printStudentList(studentSystem.filterByGPA(gpa));
                             } catch(NumberFormatException e) {
                                 System.out.println("Invalid filter gpa!");
                             }
@@ -253,17 +258,15 @@ public class App {
                         case "year": {
                             System.out.println("Please enter filter year:");
                             String year = scanner.nextLine();
-                            for(Student student : studentSystem.filterByYear(year)) {
-                                System.out.println(student);
-                            }
+                            printHeader();
+                            printStudentList(studentSystem.filterByYear(year));
                             break;
                         }
                         case "department": {
                             System.out.println("Please enter filter department:");
                             String department = scanner.nextLine();
-                            for(Student student : studentSystem.filterByDepartment(department)) {
-                                System.out.println(student);
-                            }
+                            printHeader();
+                            printStudentList(studentSystem.filterByDepartment(department));
                             break;
                         }
                         default:
@@ -279,18 +282,16 @@ public class App {
                             String.format("%.2f",  studentSystem.calculateAverageGPA()));
                     break;
                 case "9":
-                    System.out.println("\nTop 5 Students\n");
+                    System.out.println("\n=============== TOP 5 STUDENTS ===============\n");
 
-                    for(Student student : studentSystem.displayTop5()) {
-                        System.out.println(student);
-                    }
+                    printHeader();
+                    printStudentList(studentSystem.displayTop5());
                     break;
                 case "10":
-                    System.out.println("\nFailing Students\n");
+                    System.out.println("\n============= FAILING STUDENTS =============\n");
 
-                    for(Student student : studentSystem.getFailingStudents()) {
-                        System.out.println(student);
-                    }
+                    printHeader();
+                    printStudentList(studentSystem.getFailingStudents());
                     break;
                 case "11":
                     System.out.println(studentSystem.generateSummary());
@@ -304,7 +305,7 @@ public class App {
         }
     }
 
-    public static void printMenu() {
+    private static void printMenu() {
         System.out.println("""
             ===================================
             Student Management System
@@ -325,5 +326,21 @@ public class App {
 
             ===================================
             """);
+    }
+
+    private static void printStudentList(List<Student> students) {
+        if (students.isEmpty()) {
+            System.out.println("No students found!");
+            return;
+        }
+
+        for (Student student : students) {
+            System.out.println(student);
+        }
+    }
+
+    private static void printHeader() {
+        System.out.println("UID        Name                 Age  GPA   Year      Department");
+        System.out.println("----------------------------------------------------------------");
     }
 }
