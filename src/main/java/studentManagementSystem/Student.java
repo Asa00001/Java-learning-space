@@ -59,13 +59,14 @@ public class Student {
 
     @Override
     public String toString() {
-        return String.format("""
-                UID: %s
-                Name: %s
-                Age: %d
-                GPA: %.2f
-                Year: %s
-                Department: %s
-                """,  uid, name, age, gpa, year, department);
+        return String.format(
+                "%-10s %-20s %-4d %-5.2f %-10s %-10s",
+                uid,
+                name,
+                age,
+                gpa,
+                year,
+                department
+        );
     }
 }
